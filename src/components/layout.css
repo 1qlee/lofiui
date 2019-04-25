@@ -699,3 +699,7 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #E3E3E3;
 }
+svg.svg-lofiui {
+  box-shadow: 0 5px 20px gainsboro;
+  border-radius: 12px;
+}

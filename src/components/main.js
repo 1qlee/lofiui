@@ -43,8 +43,9 @@ function Main() {
           id='svg'
           width={width}
           height={height}
+          className="svg-lofiui"
           xmlns='http://www.w3.org/2000/svg'
-          style={{borderRadius: '12px', boxShadow: '0 4px 20px gainsboro', background: backgroundColor}}
+          style={{background: backgroundColor}}
         >
           <rect width='100%' height='50' x='0' y='0' fill={headerColor} />
           <circle cx='34' cy='50' r='16' fill={avatarColor} />
