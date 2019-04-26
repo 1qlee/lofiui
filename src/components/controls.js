@@ -23,7 +23,7 @@ function Controls(props) {
 
   function trimSvg(svg) {
     const reformattedSvg = svg.current.outerHTML
-                    .replace('<svg',(~svg.current.outerHTML.indexOf('xmlns')?'<svg':'<svg xmlns="http://www.w3.org/2000/svg"'))
+                    .replace('<svg',(~svg.current.outerHTML.indexOf('xmlns') ? '<svg' : '<svg xmlns="http://www.w3.org/2000/svg"'))
                     .replace(/"/g, '\'')
                     .replace(/%/g, '%25')
                     .replace(/#/g, '%23')

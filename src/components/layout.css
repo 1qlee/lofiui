@@ -703,3 +703,12 @@ svg.svg-lofiui {
   box-shadow: 0 5px 20px gainsboro;
   border-radius: 12px;
 }
+svg {
+  transition: background 0.2s;
+}
+svg rect {
+  transition: fill 0.2s;
+}
+svg circle {
+  transition: fill 0.2s;
+}

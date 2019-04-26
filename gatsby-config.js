@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Card Maker`,
+    title: `Lofi UI`,
     description: `Create simple card mock-ups and download as an SVG.`,
     author: `@1qlee`,
   },
@@ -29,8 +29,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `card-maker-app`,
-        short_name: `cardmaker`,
+        name: `lofi-ui`,
+        short_name: `lofiui`,
         start_url: `/`,
         background_color: `#6340b5`,
         theme_color: `#6340b5`,

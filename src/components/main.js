@@ -11,6 +11,7 @@ function Main() {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff")
   const [linesColor, setLinesColor] = useState("#d9d9d9")
   const [numOfLines, setNumOfLines] = useState(3)
+  const [randoms, setRandoms] = useState(generateRandoms())
   const [height, setHeight] = useState(100 + numOfLines * 18)
   const svgDOM = useRef(null)
   const [svg] = useState(svgDOM)
@@ -19,12 +20,20 @@ function Main() {
     console.log("Initializing SVG preview...")
   }
 
+  function generateRandoms() {
+    let lines = []
+    for (let i = 0; i < 12; i++) {
+      const lineWidth = 30 + Math.floor(50 * Math.random()) + "%"
+      lines.push(lineWidth)
+    }
+    return lines
+  }
+
   function generateLines(numOfLines) {
     let lines = []
     for (let i = 0; i < numOfLines; i++) {
-      const lineWidth = 30 + Math.floor(50 * Math.random())
       lines.push(
-        <rect key={i} width={lineWidth + "%"} height='10' x='20' y={75 + i * 20} fill={linesColor} rx='4' ry='8'/>
+        <rect key={i} width={randoms[i]} height='10' x='20' y={75 + i * 20} fill={linesColor} rx='4' ry='8'/>
       )
     }
     console.log("Randomizing line widths...")
@@ -33,7 +42,7 @@ function Main() {
 
   useEffect(() => {
     initMain()
-  })
+  }, [numOfLines, linesColor])
 
   return (
     <Container>
