@@ -10,16 +10,19 @@ const PickerWrapper = styled.div`
 
 const ColorBox = styled.div`
   background-color: ${props => props.color};
-  border-radius: 0.3rem;
+  border-radius: 25px;
   box-shadow: 0 1px 3px grey;
   float: left;
   height: 1.5rem;
   margin: 0 0.5rem 0.5rem 0;
-  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  transition: border-color 0.2s;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
   width: 1.5rem;
   &.is-active {
-    box-shadow: 0 1px 7px grey;
-    transform: translateY(-1px);
+    border-color: white;
   }
   &:hover {
     cursor: pointer;

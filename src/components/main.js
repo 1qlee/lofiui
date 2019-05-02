@@ -21,12 +21,12 @@ function Main() {
   }
 
   function generateRandoms() {
-    let lines = []
+    let randoms = []
     for (let i = 0; i < 12; i++) {
-      const lineWidth = 30 + Math.floor(50 * Math.random()) + "%"
-      lines.push(lineWidth)
+      const randomWidth = 30 + Math.floor(50 * Math.random()) + "%"
+      randoms.push(randomWidth)
     }
-    return lines
+    return randoms
   }
 
   function generateLines(numOfLines) {
@@ -69,6 +69,8 @@ function Main() {
         setAvatarColor={setAvatarColor}
         setBackgroundColor={setBackgroundColor}
         setNumOfLines={setNumOfLines}
+        setRandoms={setRandoms}
+        generateRandoms={generateRandoms}
         svgDOM={svgDOM}
         svg={svg}
       />

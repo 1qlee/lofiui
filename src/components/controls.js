@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
 
-import Button from "./button"
 import ColorPicker from "./colorpicker"
+import Button from "./button"
 import { Input } from "./input"
 
 const ControlsContainer = styled.div`
@@ -91,6 +91,16 @@ function Controls(props) {
       <Control>
         <p>Number of Lines</p>
         <input name="numoflines" type="range" min="1" max="12" defaultValue="3" onChange={setNumOfLines} />
+      </Control>
+      <Control>
+        <Button
+          as="button"
+          background="#6340b5"
+          color="#fff"
+          onClick={() => props.setRandoms(props.generateRandoms)}
+        >
+          Randomize Lines
+        </Button>
       </Control>
       <Control>
         <Button
