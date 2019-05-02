@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+import Container from "./container"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -24,12 +25,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <div>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()} lofiui
-          </footer>
-        </div>
+        <main style={{height: "100vh"}}>
+          <Container>{children}</Container>
+        </main>
       </>
     )}
   />

@@ -9,7 +9,7 @@ const Button = styled.a`
   display: inline-flex;
   font-weight: 700;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
   text-decoration: none;
   &:hover {
     cursor: pointer;

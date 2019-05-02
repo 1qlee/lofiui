@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Fragment } from 'react'
 
 import Controls from './controls'
-import Container from './container'
 import Preview from './preview'
 
 function Main() {
@@ -45,7 +44,7 @@ function Main() {
   }, [numOfLines, linesColor])
 
   return (
-    <Container>
+    <Fragment>
       <Preview>
         <svg
           ref={svgDOM}
@@ -74,7 +73,7 @@ function Main() {
         svgDOM={svgDOM}
         svg={svg}
       />
-    </Container>
+    </Fragment>
   );
 }
 

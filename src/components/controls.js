@@ -5,16 +5,26 @@ import ColorPicker from "./colorpicker"
 import Button from "./button"
 import { Input } from "./input"
 
+import Lines from "../../assets/menu.svg"
+import Download from "../../assets/download.svg"
+import Randomize from "../../assets/magic.svg"
+
 const ControlsContainer = styled.div`
   box-shadow: 0 4px 20px gainsboro;
   border-radius: 0.5rem;
   display: flex;
+  height: 105px;
+  width: 1000px;
+  margin: 0 auto;
 `
 
 const Control = styled.div`
   p {
     margin-bottom: 0.2rem;
   }
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
 `
 
@@ -69,28 +79,40 @@ function Controls(props) {
   return (
     <ControlsContainer>
       <Control>
-        <p>Width</p>
-        <Input onChange={setWidth} name="width" type="number" min="0" defaultValue="250" />
+        <div>
+          <p>Width</p>
+          <Input onChange={setWidth} name="width" type="number" min="0" defaultValue="250" />
+        </div>
       </Control>
       <Control>
-        <p>Header</p>
-        <ColorPicker element="header" color="#6340b5" setColor={setColor} />
+        <div>
+          <p>Header</p>
+          <ColorPicker element="header" color="#6340b5" setColor={setColor} />
+        </div>
       </Control>
       <Control>
-        <p>Avatar</p>
-        <ColorPicker element="avatar" color="#30e3ca" setColor={setColor} />
+        <div>
+          <p>Avatar</p>
+          <ColorPicker element="avatar" color="#30e3ca" setColor={setColor} />
+        </div>
       </Control>
       <Control>
-        <p>Background</p>
-        <ColorPicker element="background" color="#ffffff" setColor={setColor} />
+        <div>
+          <p>Background</p>
+          <ColorPicker element="background" color="#ffffff" setColor={setColor} />
+        </div>
       </Control>
       <Control>
-        <p>Lines</p>
-        <ColorPicker element="lines" color="#d9d9d9" setColor={setColor} />
+        <div>
+          <p>Lines</p>
+          <ColorPicker element="lines" color="#d9d9d9" setColor={setColor} />
+        </div>
       </Control>
       <Control>
-        <p>Number of Lines</p>
-        <input name="numoflines" type="range" min="1" max="12" defaultValue="3" onChange={setNumOfLines} />
+        <div>
+          <p>Number of Lines</p>
+          <input name="numoflines" type="range" min="1" max="12" defaultValue="3" onChange={setNumOfLines} />
+        </div>
       </Control>
       <Control>
         <Button
@@ -99,7 +121,16 @@ function Controls(props) {
           color="#fff"
           onClick={() => props.setRandoms(props.generateRandoms)}
         >
-          Randomize Lines
+          <Lines style={{fill: "white"}} />
+        </Button>
+      </Control>
+      <Control>
+        <Button
+          as="button"
+          background="#6340b5"
+          color="#fff"
+          >
+          <Randomize style={{fill: "white"}} />
         </Button>
       </Control>
       <Control>
@@ -109,8 +140,8 @@ function Controls(props) {
           href={`data:image/svg+xml,${svg}`}
           download="image.svg"
           onClick={() => trimSvg(props.svg)}
-        >
-          Download
+          >
+          <Download style={{fill: "white"}} />
         </Button>
       </Control>
     </ControlsContainer>

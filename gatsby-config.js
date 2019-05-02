@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Lofi UI`,
-    description: `Create simple card mock-ups and download as an SVG.`,
+    description: `Create low fidelity UI mock-ups and download them as SVG.`,
     author: `@1qlee`,
   },
   plugins: [
@@ -39,6 +39,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
