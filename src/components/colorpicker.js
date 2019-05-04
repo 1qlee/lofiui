@@ -43,7 +43,7 @@ const ColorMenu = styled.div`
 `
 
 function ColorPicker(props) {
-  const [palette, setPalette] = useState([
+  const [palette] = useState([
     "#6340b5",
     "#f85f73",
     "#3490de",
@@ -117,7 +117,7 @@ function ColorPicker(props) {
         ))}
         <InputWrapper>
           <Icon background="gainsboro" color="black" left>#</Icon>
-          <Input name="colorhex" type="text" className="is-color"
+          <Input name="colorhex" type="text" className="has-icon"
             spellCheck="false"
             defaultValue={colorHex}
             onFocus={ (e) => changeColorInput(e) }

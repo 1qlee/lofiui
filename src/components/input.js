@@ -11,10 +11,10 @@ const InputWrapper =  styled.div`
 const Input = styled.input`
   border-radius: 0.5rem;
   border: 1px solid lightgrey;
-  padding: 0.3rem;
+  padding: 0.2rem;
   outline: none;
   width: 100px;
-  &.is-color {
+  &.has-icon {
     border-radius: 0 0.5rem 0.5rem 0;
     font-size: 0.8rem;
     padding-left: 0.5rem;

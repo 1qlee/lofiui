@@ -4,7 +4,6 @@ import Controls from './controls'
 import Preview from './preview'
 
 function Main() {
-  const [width, setWidth] = useState(250)
   const [headerColor, setHeaderColor] = useState("#6340b5")
   const [avatarColor, setAvatarColor] = useState("#aaeed5")
   const [backgroundColor, setBackgroundColor] = useState("#ffffff")
@@ -49,7 +48,7 @@ function Main() {
         <svg
           ref={svgDOM}
           id='svg'
-          width={width}
+          width="250px"
           height={height}
           className="svg-lofiui"
           xmlns='http://www.w3.org/2000/svg'
@@ -61,7 +60,6 @@ function Main() {
         </svg>
       </Preview>
       <Controls
-        setWidth={setWidth}
         setHeight={setHeight}
         setHeaderColor={setHeaderColor}
         setLinesColor={setLinesColor}

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components"
+import colorSchemes from "../data/colorSchemes"
 
 import ColorPicker from "./colorpicker"
 import Button from "./button"
-import { Input } from "./input"
 
 import Lines from "../../assets/menu.svg"
 import Download from "../../assets/download.svg"
@@ -14,7 +14,7 @@ const ControlsContainer = styled.div`
   border-radius: 0.5rem;
   display: flex;
   height: 105px;
-  width: 1000px;
+  width: 750px;
   margin: 0 auto;
 `
 
@@ -29,7 +29,17 @@ const Control = styled.div`
 `
 
 function Controls(props) {
+  const [currentScheme, setCurrentScheme] = useState([
+    "#6340b5",
+    "#30e3ca",
+    "#ffffff",
+    "#d9d9d9"
+  ])
   const [svg, setSvg] = useState(null)
+
+  useEffect(() => {
+    console.log(currentScheme)
+  })
 
   function trimSvg(svg) {
     const reformattedSvg = svg.current.outerHTML
@@ -46,11 +56,14 @@ function Controls(props) {
     return setSvg(reformattedSvg)
   }
 
-  function setWidth(e) {
-    e.preventDefault()
-    let newWidth = e.target.value || 250
+  function generateColorScheme() {
+    const randomNum = Math.floor(Math.random() * 10)
+    const newScheme = colorSchemes[randomNum]
 
-    return props.setWidth(newWidth)
+    props.setHeaderColor(newScheme[0])
+    props.setAvatarColor(newScheme[1])
+    props.setBackgroundColor(newScheme[2])
+    props.setLinesColor(newScheme[3])
   }
 
   function setColor(color, element) {
@@ -78,12 +91,6 @@ function Controls(props) {
 
   return (
     <ControlsContainer>
-      <Control>
-        <div>
-          <p>Width</p>
-          <Input onChange={setWidth} name="width" type="number" min="0" defaultValue="250" />
-        </div>
-      </Control>
       <Control>
         <div>
           <p>Header</p>
@@ -129,6 +136,7 @@ function Controls(props) {
           as="button"
           background="#6340b5"
           color="#fff"
+          onClick={() => setCurrentScheme(colorSchemes[generateColorScheme()])}
           >
           <Randomize style={{fill: "white"}} />
         </Button>
